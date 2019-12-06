@@ -32,7 +32,7 @@ number = '7316717653133062491922511967442657474235534919493496983520312774506326
          '1786645835912456652947654568284891288314260769004224219022671055626321111109370544217506941658960408' \
          '0719840385096245544436298123098787992724428490918884580156166097919133875499200524063689912560717606' \
          '0588611646710940507754100225698315520005593572972571636269561882670428252483600823257530420752963450'
-int_number = [int(i) for i in number]
+int_num = [int(i) for i in number]
 max_mult = 0
 max_num = list()
 count = 13
@@ -40,8 +40,8 @@ for i in range(1001 - count):
     mult = 1
     tmp_list = list()
     for j in range(count):
-        mult *= int_number[j + i]
-        tmp_list.append(int_number[j + i])
+        mult *= int_num[j + i]
+        tmp_list.append(int_num[j + i])
         if mult > max_mult:
             max_mult = mult
             max_num = tmp_list
