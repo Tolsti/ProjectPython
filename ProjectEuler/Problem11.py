@@ -47,14 +47,15 @@ tbl = list(numpy.array([int(i) for i in
                                            '20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54\n'
                                            '01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48')]
                        ).reshape(20, 20), )
+mult_dict = {}
+
 for i in tbl:
     print(i)
 
-mult_dict = {'mult_max': 0, 'mult_max_list': 0}
 for i in range(20):
     for j in range(20):
-        mult_horizontal, mult_vertical, mult_diagonal = 1, 1, 1
-        mult_horizontal_list, mult_vertical_list, mult_diagonal_list = list(), list(), list()
+        mult_horizontal, mult_vertical, mult_diagonal_right, mult_diagonal_left = 1, 1, 1, 1
+        mult_horizontal_list, mult_vertical_list, mult_diagonal_right_list, mult_diagonal_left_list = [], [], [], []
         for k in range(4):
             if j + k < 20:
                 mult_horizontal *= tbl[i][j + k]
@@ -63,21 +64,18 @@ for i in range(20):
                 mult_vertical *= tbl[i + k][j]
                 mult_vertical_list.append(tbl[i + k][j])
             if i + k < 20 and j + k < 20:
-                mult_diagonal *= tbl[i + k][j + k]
-                mult_diagonal_list.append(tbl[i + k][j + k])
-            if mult_horizontal > mult_dict['mult_max']:
-                mult_dict['mult_max'] = mult_horizontal
-                mult_dict['mult_max_list'] = mult_horizontal_list
-            if mult_vertical > mult_dict['mult_max']:
-                mult_dict['mult_max'] = mult_vertical
-                mult_dict['mult_max_list'] = mult_vertical_list
-            if mult_diagonal > mult_dict['mult_max']:
-                mult_dict['mult_max'] = mult_diagonal
-                mult_dict['mult_max_list'] = mult_diagonal_list
-        mult_dict[mult_horizontal] = mult_horizontal_list
-        mult_dict[mult_vertical] = mult_vertical_list
-        mult_dict[mult_diagonal] = mult_diagonal_list
+                mult_diagonal_right *= tbl[i + k][j + k]
+                mult_diagonal_right_list.append(tbl[i + k][j + k])
+            if i - k >= 0 and j + k < 20:
+                mult_diagonal_left *= tbl[i - k][j + k]
+                mult_diagonal_left_list.append(tbl[i - k][j + k])
+        if len(mult_horizontal_list) == 4:
+            mult_dict[mult_horizontal] = mult_horizontal_list
+        if len(mult_vertical_list) == 4:
+            mult_dict[mult_vertical] = mult_vertical_list
+        if len(mult_diagonal_right_list) == 4:
+            mult_dict[mult_diagonal_right] = mult_diagonal_right_list
+        if len(mult_diagonal_left_list) == 4:
+            mult_dict[mult_diagonal_left] = mult_diagonal_left_list
 
-# print(mult_dict)
-print(mult_dict['mult_max'])
-print(mult_dict['mult_max_list'])
+print(max(mult_dict), mult_dict[max(mult_dict)])
