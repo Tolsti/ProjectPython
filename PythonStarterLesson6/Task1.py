@@ -4,9 +4,9 @@
 
 def fun_recurs(a):
     if a <= 0:
-        print('\nСумма последовательности: ', end = '')
+        print('\nСумма последовательности: ', end='')
         return 0
-    print(a, end = " ")
+    print(a, end=" ")
     return fun_recurs(a - 1) + a
 
 

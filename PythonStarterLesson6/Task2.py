@@ -5,7 +5,8 @@ tmp_str = 'А РОНО дети возле кафе "Факел" зовите д
 
 def fun_polindrom(a):
     a = a.lower()
-    for i in [' ', ',', '.', ':', ';', '!', '?', '-', '\"', '\'']: a = a.replace(i, '')
+    for i in [' ', ',', '.', ':', ';', '!', '?', '-', '\"', '\'']:
+        a = a.replace(i, '')
     b = a[::-1]
     if a == b:
         return True

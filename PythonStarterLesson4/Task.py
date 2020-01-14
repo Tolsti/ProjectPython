@@ -5,7 +5,7 @@ tmp_b = int(input('Введите длину: '))
 while tmp_a > 0:
     b = tmp_b
     while b > 0:
-        print('*', end = ' ')
+        print('*', end=' ')
         b -= 1
     print()
     tmp_a -= 1

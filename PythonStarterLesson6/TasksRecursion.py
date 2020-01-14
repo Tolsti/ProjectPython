@@ -5,12 +5,12 @@ tmp_num = random.randint(1, 20)
 print('n = ' + str(tmp_num))
 
 
-def fun_rec1(a, b = 1):
+def fun_rec1(a, b=1):
     if b > a:
         print('\n')
         return 0
     else:
-        print(b, end = ' ')
+        print(b, end=' ')
         return fun_rec1(a, b + 1)
 
 
@@ -26,14 +26,14 @@ print('a = ' + str(tmp_a) + ', b = ' + str(tmp_b))
 if tmp_a < tmp_b:
     def fun_rec2(a, b):
         if a <= b:
-            print(a, end = ' ')
+            print(a, end=' ')
             return fun_rec2(a + 1, b)
         else:
             return 0
 else:
     def fun_rec2(a, b):
         if b <= a:
-            print(a, end = ' ')
+            print(a, end=' ')
             return fun_rec2(a - 1, b)
         else:
             return 0
