@@ -142,36 +142,58 @@
 # obj.attribute = 900
 # print(obj.attribute)
 
-class Complex:
-    def __init__(self, real=0.0, imaginary=0.0):
-        self.real = real
-        self.imaginary = imaginary
+# class Complex:
+#     def __init__(self, real=0.0, imaginary=0.0):
+#         self.real = real
+#         self.imaginary = imaginary
+#
+#     def __repr__(self):
+#         return 'Complex({!r}, {!r})'.format(self.real, self.imaginary)
+#
+#     def __str__(self):
+#         return '{}{:+d}i'.format(self.real, self.imaginary)
+#
+#     def __add__(self, other):
+#         return Complex(self.real + other.real, self.imaginary + other.imaginary)
+#
+#     def __neg__(self):
+#         return Complex(-self.real, -self.imaginary)
+#
+#     def __sub__(self, other):
+#         return self + (-other)
+#
+#     def __abs__(self):
+#         return (self.real ** 2 + self.imaginary ** 2) ** 0.5
+#
+#     def __eq__(self, other):
+#         return self.real == other.real and self.imaginary == other.imaginary
+#
+#
+# c = Complex(2, 5)
+# print(c.__str__())
+# print(c.__repr__())
+# print((Complex(2, 3) + Complex(2, -1)).__repr__())
+# print((Complex(2, 3) - Complex(1, 1)).__repr__())
+# print(abs(Complex(2, 3)))
 
-    def __repr__(self):
-        return 'Complex({!r}, {!r})'.format(self.real, self.imaginary)
+# class Singleton:
+#     _instance = None
+#
+#     def __new__(cls):
+#         if cls._instance is None:
+#             cls._instance = object.__new__(cls)
+#         return cls._instance
+#
+#     def __init__(self):
+#         self.value = 'some value'
 
-    def __str__(self):
-        return '{}{:+d}i'.format(self.real, self.imaginary)
+class MyObject:
+    def __init__(self):
+        self.password = None
 
-    def __add__(self, other):
-        return Complex(self.real + other.real, self.imaginary + other.imaginary)
+    def __getattribute__(self, item):
+        if item == 'secret_field' and self.password == '9ea)fc':
+            return 'Secret value'
+        else:
+            return object.__getattribute__(self, item)
 
-    def __neg__(self):
-        return Complex(-self.real, -self.imaginary)
-
-    def __sub__(self, other):
-        return self + (-other)
-
-    def __abs__(self):
-        return (self.real ** 2 + self.imaginary ** 2) ** 0.5
-
-    def __eq__(self, other):
-        return self.real == other.real and self.imaginary == other.imaginary
-
-
-c = Complex(2, 5)
-print(c.__str__())
-print(c.__repr__())
-print((Complex(2, 3) + Complex(2, -1)).__repr__())
-print((Complex(2, 3) - Complex(1, 1)).__repr__())
-print(abs(Complex(2, 3)))
