@@ -4,23 +4,25 @@
 одной шкале, а получены в другой."""
 
 
-class Temperature:
-    def __init__(self, temperature = 0):
-        self.set_temperature(temperature)
-    
+class Celsius:
+    def __init__(self, temperature=0):
+        self._temperature = temperature
+
     def to_fahrenheit(self):
-        return (self.get_temperature() * 1.8) + 32
-    
-    def get_temperature(self):
+        return (self._temperature * 1.8) + 32
+
+    @property
+    def temperature(self):
+        # print('Полученное значение: ')
         return self._temperature
-    
-    def set_temperature(self, value):
-        if value < -273:
-            raise ValueError("Temperature below -273 is not possible")
+
+    @temperature.setter
+    def temperature(self, value):
+        # print('Задать значение: ')
         self._temperature = value
 
 
-man = Temperature()
-man.set_temperature(-300)
-print(man.get_temperature())
+man = Celsius()
+man.temperature = 37
+print(man.temperature)
 print(man.to_fahrenheit())
