@@ -44,25 +44,55 @@
 # if __name__ == '__main__':
 #     main()
 
-class Horse:
-    def run(self):
-        print('I am running')
+# class Horse:
+#     def run(self):
+#         print('I am running')
+#
+#
+# class Bird:
+#     def fly(self):
+#         print('I am flying')
+#
+#
+# class Pegasus(Horse, Bird):
+#     pass
+#
+#
+# def main():
+#     pegasus = Pegasus()
+#     pegasus.run()
+#     pegasus.fly()
+#
+#
+# if __name__ == '__main__':
+#     main()
+
+# class Base(object):
+#     def method(self):
+#         print('Method class:', __class__.__name__)
+#         print('Instance class:', type(self).__name__)
+#
+#
+# class Child(Base):
+#     pass
+#
+#
+# if __name__ == '__main__':
+#     base_instance = Base()
+#     base_instance.method()
+#
+#     child_instance = Child()
+#     child_instance.method()
+
+class MethodContainer:
+    def __init__(self, data):
+        self.data = data
+
+    def method(self):
+        print('method invoked')
+        print('data = ', self.data)
 
 
-class Bird:
-    def fly(self):
-        print('I am flying')
-
-
-class Pegasus(Horse, Bird):
-    pass
-
-
-def main():
-    pegasus = Pegasus()
-    pegasus.run()
-    pegasus.fly()
-
-
-if __name__ == '__main__':
-    main()
+instance = MethodContainer(8)
+print(type(MethodContainer.method))
+print(type(instance.method))
