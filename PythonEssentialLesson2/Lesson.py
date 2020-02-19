@@ -84,15 +84,36 @@
 #     child_instance = Child()
 #     child_instance.method()
 
-class MethodContainer:
-    def __init__(self, data):
-        self.data = data
+# class MethodContainer:
+#     def __init__(self, data):
+#         self.data = data
+#
+#     def method(self):
+#         print('method invoked')
+#         print('data = ', self.data)
+#
+#
+# instance = MethodContainer(8)
+# print(type(MethodContainer.method))
+# print(type(instance.method))
 
+class Base:
     def method(self):
-        print('method invoked')
-        print('data = ', self.data)
+        print('Base method invoked on', type(self).__name__, 'instance')
 
 
-instance = MethodContainer(8)
-print(type(MethodContainer.method))
-print(type(instance.method))
+class Child(Base):
+    def method(self):
+        Base.method(self)
+        print('Child method invoked on', type(self).__name__, 'instance')
+
+
+base_instance = Base()
+base_instance.method()
+print()
+child_instance = Child()
+child_instance.method()
+print()
+Base.method(child_instance)
+print()
+super.m
