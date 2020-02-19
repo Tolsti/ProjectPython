@@ -97,23 +97,88 @@
 # print(type(MethodContainer.method))
 # print(type(instance.method))
 
-class Base:
-    def method(self):
-        print('Base method invoked on', type(self).__name__, 'instance')
+# class Base:
+#     def method(self):
+#         print('Base method invoked on', type(self).__name__, 'instance')
+#
+#
+# class Child(Base):
+#     def method(self):
+#         # Base.method(self)
+#         # super(Child, self).method()
+#         super().method()
+#         print('Child method invoked on', type(self).__name__, 'instance')
+#
+#
+# base_instance = Base()
+# base_instance.method()
+# print()
+# child_instance = Child()
+# child_instance.method()
+# print()
+# Base.method(child_instance)
 
+# class Animal:
+#     def __init__(self):
+#         self.can_run = False
+#         self.can_fly = False
+#
+#     def print_abilities(self):
+#         print(type(self).__name__ + ':')
+#         print('Can run:', self.can_run)
+#         print('Can fly:', self.can_fly)
+#         print()
+#
+#
+# class Horse(Animal):
+#     def __init__(self):
+#         super().__init__()
+#         self.can_run = True
+#
+#
+# class Bird(Animal):
+#     def __init__(self):
+#         super().__init__()
+#         self.can_fly = True
+#
+#
+# class Pegasus(Horse, Bird):
+#     pass
+#
+#
+# if __name__ == '__main__':
+#     horse = Horse()
+#     horse.print_abilities()
+#
+#     bird = Bird()
+#     bird.print_abilities()
+#
+#     pegasus = Pegasus()
+#     pegasus.print_abilities()
 
-class Child(Base):
-    def method(self):
-        Base.method(self)
-        print('Child method invoked on', type(self).__name__, 'instance')
+# def check_instance(obj, cls):
+#     return check_subclass(type(obj), cls)
+#
+#
+# def check_subclass(child, base):
+#     for direct_base in child.__bases__:
+#         if child == base:
+#             return True
+#
+#         if base == direct_base:
+#             return True
+#         return check_subclass(direct_base, base)
+#
+#     return False
+#
+#
+# print('1: ', check_instance(8, int))
+# print('2: ', check_instance(8, str))
+# print('3: ', check_instance(True, int))
+# print('4: ', check_instance('sdae', object))
+# print('5: ', check_subclass(bool, object))
+# print('6: ', check_subclass(bool, str))
+# print('7: ', issubclass(int, int))
+# print('8: ', check_subclass(bool, bool))
+# print('9: ', check_subclass(bool, int))
 
-
-base_instance = Base()
-base_instance.method()
-print()
-child_instance = Child()
-child_instance.method()
-print()
-Base.method(child_instance)
-print()
-super.m
