@@ -224,3 +224,111 @@
 #     for i in List(range(100000)):
 #         if i % 1000 == 0:
 #             print(i)
+
+# def generator():
+#     yield 'hello'
+#     yield 'world'
+#
+#
+# print(generator)
+# print(generator())
+#
+# g = generator()
+
+# def fibonacci(count):
+#     first, second = 0, 1
+#     for _ in range(count):
+#         yield second
+#         first, second = second, first + second
+#
+#
+# # f = fibonacci(5)
+# #
+# # print(next(f))
+# # print(next(f))
+# # print(next(f))
+# # print(next(f))
+# # print(next(f))
+# # print(next(f))
+#
+# count=int(input('How many Fibonacci numbers to print?'))
+# for fib in fibonacci(count):
+#     print(fib)
+
+# import math
+#
+#
+# class MyRange:
+#     def __init__(self, first, second=None, step=1):
+#         if second is None:
+#             self.start = 0
+#             self.end = first
+#         else:
+#             self.start = first
+#             self.end = second
+#
+#         if step != 0:
+#             self.step = step
+#         else:
+#             raise ValueError('Step cannot be zero')
+#
+#         self.length = math.ceil((self.end - self.start) / self.step)
+#
+#     def __len__(self):
+#         return self.length
+#
+#     def __getitem__(self, item):
+#         if 0 <= item < len(self):
+#             return self.start + item * self.step
+#         else:
+#             raise IndexError('MyRange index out of range')
+#
+#     def __repr__(self):
+#         return 'MyRange({}, {}, {})'.format(self.start, self.end, self.step)
+#
+#     def __iter__(self):
+#         current = self.start
+#         for _ in range(len(self)):
+#             yield current
+#             current += self.step
+#
+#
+# for i in MyRange(5):
+#     print(i)
+
+# def generator_function():
+#     for x in range(5):
+#         for y in range(3):
+#             if (x + y) % 2 == 0:
+#                 yield x * y
+#
+#
+# # эквивалент генератора функции выше
+# generator2 = (x * y for x in range(5) for y in range(3) if (x + y) % 2 == 0)
+# generator1 = generator_function()
+# for value in generator1:
+#     print(value, end=' ')
+# print()
+#
+# for value in generator2:
+#     print(value, end=' ')
+# print()
+#
+# print(sum(x ** 2 for x in range(10)))
+
+def subgenerator():
+    yield '[subgenerator] hello'
+    yield '[subgenerator] world'
+
+
+def generator():
+    yield from range(10)
+    print()
+    yield from (x * 3 for x in range(5))
+    print()
+    yield from subgenerator()
+    yield 'end'
+
+
+for value in generator():
+    print(value)
