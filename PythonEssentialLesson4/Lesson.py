@@ -316,19 +316,68 @@
 #
 # print(sum(x ** 2 for x in range(10)))
 
-def subgenerator():
-    yield '[subgenerator] hello'
-    yield '[subgenerator] world'
+# def subgenerator():
+#     yield '[subgenerator] hello'
+#     yield '[subgenerator] world'
+#
+#
+# def generator():
+#     yield from range(10)
+#     print()
+#     yield from (x * 3 for x in range(5))
+#     print()
+#     yield from subgenerator()
+#     yield 'end'
+#
+#
+# for value in generator():
+#     print(value)
 
-
-def generator():
-    yield from range(10)
-    print()
-    yield from (x * 3 for x in range(5))
-    print()
-    yield from subgenerator()
-    yield 'end'
-
-
-for value in generator():
-    print(value)
+# import random
+# import time
+#
+#
+# def sleep(seconds):
+#     start = time.time()
+#
+#     while time.time() - start < seconds:
+#         yield
+#
+#
+# def produce():
+#     yield from sleep(0.5)
+#     data = random.randint(1, 100)
+#     return data
+#
+#
+# def consume():
+#     sum_ = 0
+#     count = 0
+#
+#     while True:
+#         data = yield from produce()
+#         print('Got data:', data)
+#
+#         sum_ += data
+#         count += 1
+#
+#         print('Sum:', sum_)
+#         print('Average:', sum_ / count)
+#         print()
+#
+#
+# def another_task():
+#     while True:
+#         print()
+#         print('Hello from another task!')
+#         print()
+#         yield from sleep(1)
+#
+#
+# if __name__ == '__main__':
+#     consumer = consume()
+#     task = another_task()
+#
+#     while range(10):
+#         next(consumer)
+#         next(task)
