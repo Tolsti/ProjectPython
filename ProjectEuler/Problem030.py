@@ -8,6 +8,7 @@
 Сумма этих чисел равна 1634 + 8208 + 9474 = 19316.
 
 Найдите сумму всех чисел, которые могут быть записаны в виде суммы пятых степеней их цифр."""
+
 import time
 
 
@@ -44,7 +45,7 @@ def all_numbers_written_as_sum_powers_version_2(power):
     return sum_powers
 
 
-if __name__ == '__main__':
+def main():
     time_start = time.time()
     print('The sum of all numbers that can be written as the sum of powers of their digits:',
           all_numbers_written_as_sum_powers(5))
@@ -58,3 +59,7 @@ if __name__ == '__main__':
           all_numbers_written_as_sum_powers_version_2(5))
     time_end = time.time()
     print(time_end - time_start)
+
+
+if __name__ == '__main__':
+    main()
