@@ -13,4 +13,5 @@ def function_arithmetic_mean(first, *number):
 
 
 print(function_arithmetic_mean(num1, num2))
-print(function_arithmetic_mean(range(2, 66)))
+print(function_arithmetic_mean(*range(2, 66)))
+print(function_arithmetic_mean(*numbers))
