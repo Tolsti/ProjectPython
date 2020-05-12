@@ -27,4 +27,3 @@ print(*d)
 
 d.rotate(5)
 print(*d)
-
