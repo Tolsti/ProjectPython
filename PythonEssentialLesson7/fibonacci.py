@@ -16,3 +16,12 @@ def nth_fibonacci(number):
     for current in fibonacci(number):
         result = current
     return result
+
+
+if __name__ == '__main__':
+    print('Running Fibonacci tests...')
+    assert nth_fibonacci(1) == 1
+    assert nth_fibonacci(2) == 1
+    assert nth_fibonacci(3) == 2
+    assert nth_fibonacci(4) == 3
+    print('End running tests')
