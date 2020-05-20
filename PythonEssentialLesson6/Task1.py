@@ -16,4 +16,3 @@ first_string = input('First string: ')
 second_string = input('Second string: ')
 common = set(first_string) & set(second_string)
 print('Found', len(common), 'common characters:', *common)
-

@@ -28,17 +28,11 @@ while True:
     print(2, 'output a link.')
     print(3, 'exit.')
 
-    flag = input('Selected action: ')
-
-    try:
-        flag = int(flag)
-    except (TypeError, ValueError):
-        flag = flag
-
-    if flag in [1, 'create', 'new']:
+    flag = input('Select action: ')
+    if flag in ['1', 'create', 'new']:
         create_link = input('The name of the link: ')
         dictionary_links[create_link] = abbreviated_link(create_link)
-    elif flag in [2, 'get', 'output']:
+    elif flag in ['2', 'get', 'output']:
         get_link = input('The name of the link: ')
         try:
             print(dictionary_links[get_link])
@@ -50,7 +44,7 @@ while True:
                     flag_on_the_existence_of_links = False
             if flag_on_the_existence_of_links:
                 print('There is no such link')
-    elif flag in [3, 'exit', 'quit']:
+    elif flag in ['3', 'exit', 'quit', 'q']:
         break
 
     print()

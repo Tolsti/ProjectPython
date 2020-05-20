@@ -4,11 +4,11 @@ import collections
 
 # OrderedDict
 d = {'banana': 3, 'apple': 4, 'pear': 1, 'orange': 2}
-d = collections.OrderedDict(sorted(d.items(), key = lambda t: t[0]))
+d = collections.OrderedDict(sorted(d.items(), key=lambda t: t[0]))
 print(d)
-d = collections.OrderedDict(sorted(d.items(), key = lambda t: t[1]))
+d = collections.OrderedDict(sorted(d.items(), key=lambda t: t[1]))
 print(d)
-d = collections.OrderedDict(sorted(d.items(), key = lambda t: len(t[0])))
+d = collections.OrderedDict(sorted(d.items(), key=lambda t: len(t[0])))
 print(d)
 d.move_to_end('apple')
 print(d)

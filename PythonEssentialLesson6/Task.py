@@ -18,7 +18,9 @@ for i in my_function('one', 'two', 'five', 'nine'):
     print(dictionary[i], end=' ')
 print()
 
+
 # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * #
+
 
 def my_function_1(first, *args):
     if len(args) == 0:
