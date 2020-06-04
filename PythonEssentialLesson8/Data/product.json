@@ -1,0 +1,22 @@
+[
+  {
+    "name": "sofa",
+    "price": 500
+  },
+  {
+    "name": "table",
+    "price": 300
+  },
+  {
+    "name": "bed",
+    "price": 460
+  },
+  {
+    "name": "mirror",
+    "price": 150
+  },
+  {
+    "name": "chair",
+    "price": 50
+  }
+]
