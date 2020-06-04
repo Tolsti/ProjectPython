@@ -83,7 +83,7 @@
 #
 # lines.insert(1, 'insert line\n')
 #
-# with open(filename, 'w')as data:
+# with open(filename, 'w') as data:
 #     data.writelines(lines)
 
 
@@ -142,7 +142,7 @@
 # numbers = [random.randint(-1000000000, 1000000000)
 #            for _ in range(1000)]
 #
-# with open('data/example4.txt', 'w')as text_file:
+# with open('data/example4.txt', 'w') as text_file:
 #     for number in numbers:
 #         text_file.write('{}\n'.format(number))
 #
@@ -156,7 +156,7 @@
 
 
 # numbers = []
-# with open('data/example4.txt')as text_file:
+# with open('data/example4.txt') as text_file:
 #     # numbers = [int(line) for line in text_file]
 #     for line in text_file:
 #         numbers.append(int(line))
