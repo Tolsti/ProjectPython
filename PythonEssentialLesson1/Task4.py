@@ -27,17 +27,17 @@ class MyClass:
     # __eq__(self, other)
     # Определяет поведение оператора равенства, ==.
     def __eq__(self, other):
-        return len(self.name) == len(other.name) and self.age == other.age
+        return len(self.name) == len(other.month) and self.age == other.age
 
     # __ne__(self, other)
     # Определяет поведение оператора неравенства, !=.
     def __ne__(self, other):
-        return len(self.name) != len(other.name) and self.age != other.age
+        return len(self.name) != len(other.month) and self.age != other.age
 
     # __lt__(self, other)
     # Определяет поведение оператора меньше, <.
     def __lt__(self, other):
-        return len(self.name) < len(other.name)
+        return len(self.name) < len(other.month)
 
     # __gt__(self, other)
     # Определяет поведение оператора больше, >.
