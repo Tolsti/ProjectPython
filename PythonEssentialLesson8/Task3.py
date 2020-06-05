@@ -33,8 +33,6 @@ while True:
             for key in data:
                 if get_del_link in [key, data[key]]:
                     del data[key]
-                # elif get_del_link == data[key]:
-                #     del data[get_del_link.encode()]
 
         elif flag in ['3', 'exit', 'quit', 'q']:
             print()
