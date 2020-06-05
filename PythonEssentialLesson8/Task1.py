@@ -7,7 +7,8 @@ with open('data/numbers.txt', 'w') as data:
     data.write('\n'.join([str(random.uniform(0, 100)) for number in range(10000)]))
 
 with open('data/numbers.txt') as data:
+    num = []
     for i in data.readlines():
+        num.append(float(i))
         print(float(i))
-    data.seek(0)
-    print(sum([float(i) for i in data]))
+    print('Sum:', sum(num))
