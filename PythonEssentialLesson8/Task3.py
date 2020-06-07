@@ -3,8 +3,9 @@
 При желании можете ознакомиться с модулем shelve (https://docs.python.org/3/library/shelve.html),
 который в данном случае будет весьма удобен и упростит выполнение задания. """
 
-import Data.interface, Data.abbreviated
 import shelve
+import Data.abbreviated
+import Data.interface
 
 print('Program that emulates the work of the key reduction service.')
 
