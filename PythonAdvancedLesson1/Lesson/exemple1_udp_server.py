@@ -1,6 +1,6 @@
 import socket
 
-sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)  # SOCK_DGRAM протокол UDP
 sock.bind(('127.0.0.1', 8888))
 result = sock.recv(1024)
 print('Message', result.decode('utf-8'))

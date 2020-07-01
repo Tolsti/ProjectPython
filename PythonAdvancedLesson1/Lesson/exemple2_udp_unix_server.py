@@ -14,5 +14,6 @@ while True:
         result = sock.recv(1024)
     except KeyboardInterrupt:
         sock.close()
+        break
     else:
         print('Message', result.decode('utf-8'))
