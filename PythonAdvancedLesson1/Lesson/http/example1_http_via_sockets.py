@@ -14,6 +14,6 @@ content = '\n'.join(content_items)
 print('--- HTTP MESSAGE ---')
 print(content)
 print('--- END OF MESSAGE ---')
-sock.send(content.encode())
-result = sock.recv(1024)
+sock.send(content.encode())  # отправляем запрос
+result = sock.recv(10024)  # получаем данные по запросу
 print(result.decode())
