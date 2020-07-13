@@ -1,13 +1,13 @@
-import socket
+import socketserver
 
-sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-sock.bind(('127.0.0.1', 8888))
 
-while True:
-    try:
-        result = sock.recv(1024)
-    except KeyboardInterrupt:
-        sock.close()
-        break
-    else:
-        print('Message', result.decode('utf-8'))
+class EchoUDPHandler(socketserver.BaseRequestHandler):
+    def handle(self):
+        data, socket = self.request
+        print('New connection')
+        print('ID: {}'.format(data.decode()))
+
+
+if __name__ == '__main__':
+    with socketserver.UDPServer(('127.0.0.1', 8880), EchoUDPHandler) as server:
+        server.serve_forever()
