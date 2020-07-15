@@ -10,11 +10,14 @@ def read_sok():
 
 host = '127.0.0.1'
 port = 8888
-alias = input()
+
 sor = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sor.bind(('', 0))
-potok = threading.Thread(target=read_sok)
-potok.start()
+
+alias = input()
+pot = threading.Thread(target=read_sok)
+pot.start()
+
 while True:
-    mensahe = input()
-    sor.sendto(('[' + alias + '] ' + mensahe).encode('utf-8'), (host, port))
+    message = input()
+    sor.sendto(('[' + alias + '] ' + message).encode('utf-8'), (host, port))
