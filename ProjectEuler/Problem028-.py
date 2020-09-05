@@ -10,7 +10,7 @@
 
 Какова сумма чисел в диагоналях спирали 1001 на 1001, образованной таким же способом?"""
 
-matrix = 1001
+matrix = 7
 spiral = [[0 for i in range(matrix)] for j in range(matrix)]
 # print(spiral)
 
@@ -54,9 +54,9 @@ def spiral(width, height):
                 return matrix  # nowhere to go
 
 
-spiral = spiral(matrix,matrix)
+spiral = spiral(matrix, matrix)
 
 for i in range(matrix):
     for j in range(matrix):
-        print(spiral[i][j], end = ' \t')
+        print(spiral[i][j], end=' \t')
     print()
